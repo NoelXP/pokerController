@@ -1,21 +1,13 @@
-# Use Debian Bullseye Slim as the base image
-FROM debian:bullseye-slim
-
-# Install required dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    bash \
-    openjdk-11-jdk \
-    groovy \
-    r-base \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+# Use the official Groovy image
+FROM groovy:4.0.24-jdk11
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the source files into the container
+# Copy source files into the container
 COPY src/org/addHand.R ./src/org/addHand.R
 COPY pokerController.groovy ./pokerController.groovy
 
-# Define the entrypoint to execute the Groovy script
+# Entrypoint to execute the Groovy script
 ENTRYPOINT ["groovy", "./pokerController.groovy"]
 

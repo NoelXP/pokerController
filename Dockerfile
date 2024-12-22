@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # Copy the source files into the container
-COPY src/org/addHand.R ./src/org/addHand.R
-COPY pokerController.groovy ./pokerController.groovy
+COPY ./src/org/addHand.R ./src/org/addHand.R
+COPY ./pokerController.groovy ./pokerController.groovy
 
 # Define the entrypoint to execute the Groovy script
 ENTRYPOINT ["groovy", "./pokerController.groovy"]

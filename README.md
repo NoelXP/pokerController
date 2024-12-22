@@ -1,8 +1,11 @@
+To run the Docker container:
+
+
 🃏 Poker Hand Tracker 🃏
 
 A Groovy and R-powered program to help you record poker hands quickly and efficiently! This project uses Docker to package and run the application, making it easy to set up and use anywhere.
 📂 Project Structure
-
+```bash
 .
 ├── Dockerfile                 # 🐋 Docker configuration for the project
 ├── pokerController.groovy     # 🤖 Groovy script to manage poker hand input
@@ -11,6 +14,7 @@ A Groovy and R-powered program to help you record poker hands quickly and effici
 │   └── org
 │       └── addHand.R          # 📊 R script for storing and analyzing poker data
 └── var                        # 🗃️ Placeholder for additional project data
+```
 
 🛠️ Setup Instructions
 Step 1: Clone the Repository
@@ -30,9 +34,6 @@ docker run -it --rm \
   -v $(pwd)/src:/app/src \
   -v $(pwd)/pokerController.groovy:/app/pokerController.groovy \
   handtracker
-
-    Interactive Mode (-it): Allows user input in real time.
-    Volume Mapping (-v): Links your local files (like the Groovy script and R script) to the container.
 
 🧠 How It Works
 
